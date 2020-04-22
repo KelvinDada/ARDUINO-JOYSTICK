@@ -1,12 +1,9 @@
 
 
-/* This code reads and filters data from PDM Microphone and Accelerometer on the Arduino BLE Sense,
-    and a force sensitive sensor,
-    to prints assigned values on the serial. Those assigned values are later read by processing to
-    trigger changes on the animations.
+/* This code reads and filters data from Accelerometer on the Arduino IoT,
+ a force sensitive sensor and LDR,  to prints assigned values on the serial. Those assigned values are later read by processing to
+    trigger changes on the animations. This also triggers animations on the NeoPixels connected to the Arduino.
 
-  > Eliminated the if (sampleread) conditionals from the Mic block and that fixed the accelerometer slowin
-  problem on Processing.
 
   /*
    FORCE SENSOR WIRING:
@@ -14,11 +11,18 @@
    leg connected to ground throu 10k resistor and to pin analog 0 pin on the arduino.
 
 LDR SENSOR / BUTTON
-
-
+Analog Pin 2 to read.
+LDR connected directly to ground and a to 5V throug a 3K Resistor.
 
    NEOPIXELS WIRING
    Data pin connected to Analog Pin 1, throu 330ohms resistor
+   
+   Code References:
+   > NEO Pixels animations based on https://www.tweaking4all.com/hardware/arduino/adruino-led-strip-effects/#LEDStripEffectTwinkle
+   > For filtering the data, I adapted the Smoothing Example from the Arduino IDE.
+   
+   Written By: Kelvin Feliz, 2020.
+   
 */
 
 
